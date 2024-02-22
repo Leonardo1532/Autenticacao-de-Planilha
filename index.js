@@ -57,3 +57,5 @@ async function TrackData() {
     })
     return console.log("Dados copiados com sucesso!")
 }
+
+TrackData()
