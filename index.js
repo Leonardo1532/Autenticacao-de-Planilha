@@ -1,7 +1,7 @@
-const { GoogleSpreadsheet } = require('google-spreadsheet')
-const credenciais = require('./credentials (1).json')
-const arquivo = require('./arquivo (1).json')
-const { JWT } = require('google-auth-library')
+import { GoogleSpreadsheet } from 'google-spreadsheet'
+import credenciais from './credentials1.json' assert { type: "json" }
+import arquivo from './arquivo1.json' assert { type: "json" }
+import { JWT } from 'google-auth-library'
 
 const SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets'
@@ -50,6 +50,7 @@ async function AddUser(data = {}) {
 
 
 async function TrackData() {
+    console.log("testando")
     let data = await ReadWorkSheet()
     data.map(async (user) => {
         let response = await AddUser(user)
